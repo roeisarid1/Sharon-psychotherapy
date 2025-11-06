@@ -1,0 +1,617 @@
+/* ===================================
+   Global Styles & Variables
+   =================================== */
+
+:root {
+  /* Color Palette - Calm & Professional */
+  --primary-color: #4a90a4; /* Teal Blue */
+  --secondary-color: #7fb3d5; /* Light Blue */
+  --accent-color: #5d9b9b; /* Sage Green */
+  --text-dark: #2c3e50; /* Dark Blue-Gray */
+  --text-light: #6c757d; /* Medium Gray */
+  --bg-light: #f8f9fa; /* Very Light Gray */
+  --bg-white: #ffffff;
+  --border-color: #dee2e6;
+  --success-color: #28a745;
+  --info-color: #17a2b8;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 3rem;
+  --spacing-xl: 4rem;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Shadows */
+  --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.7;
+  background-color: var(--bg-white);
+  direction: rtl;
+}
+
+/* ===================================
+   Typography
+   =================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+h5 {
+  font-size: 1.25rem;
+}
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.lead {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--text-light);
+}
+
+/* ===================================
+   Navigation
+   =================================== */
+
+.navbar {
+  padding: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+.btn-contact {
+  background-color: var(--primary-color);
+  color: white !important;
+  border-radius: var(--radius-md);
+  padding: 0.5rem 1.5rem !important;
+}
+
+.btn-contact:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+
+.btn {
+  font-weight: 500;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-outline-primary {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* ===================================
+   Hero Section
+   =================================== */
+
+.hero-section {
+  background: linear-gradient(135deg, #e8f4f8 0%, #f8f9fa 100%);
+  padding: 4rem 0;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.min-vh-75 {
+  min-height: 75vh;
+}
+
+/* ===================================
+   Info Cards (Hero Section)
+   =================================== */
+
+.info-card {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.info-icon {
+  font-size: 2rem;
+}
+
+.info-text {
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+/* ===================================
+   Page Headers
+   =================================== */
+
+.page-header {
+  background: linear-gradient(135deg, #e8f4f8 0%, #f8f9fa 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transform: translateX(50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+/* ===================================
+   Cards
+   =================================== */
+
+.card {
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* ===================================
+   Method Page Styles
+   =================================== */
+
+.benefit-icon {
+  font-size: 2.5rem;
+}
+
+.session-step {
+  background: white;
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+.session-step:hover {
+  background: var(--bg-light);
+}
+
+.step-number-large {
+  width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* ===================================
+   About Page Styles
+   =================================== */
+
+.content-box {
+  border-left: 4px solid var(--primary-color);
+}
+
+.quote-box {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.approach-icon {
+  font-size: 3rem;
+}
+
+/* ===================================
+   Treatment Areas Styles
+   =================================== */
+
+.treatment-card {
+  transition: all 0.3s ease;
+}
+
+.treatment-card:hover {
+  border-color: var(--primary-color) !important;
+}
+
+.treatment-icon {
+  font-size: 3rem;
+}
+
+.work-method-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+/* ===================================
+   Process Page Styles
+   =================================== */
+
+.process-step {
+  position: relative;
+}
+
+.step-number-circle {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-md);
+}
+
+.duration-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.expectation-card {
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.expectation-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ===================================
+   Why Page Styles
+   =================================== */
+
+.why-icon {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.approach-feature {
+  background: white;
+  border-radius: var(--radius-md);
+  transition: all 0.3s ease;
+}
+
+.approach-feature:hover {
+  background: var(--bg-light);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+/* ===================================
+   Contact Page Styles
+   =================================== */
+
+.contact-method-icon {
+  font-size: 3rem;
+}
+
+.accordion-button {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: var(--primary-color);
+}
+
+/* ===================================
+   Footer
+   =================================== */
+
+footer {
+  background-color: var(--text-dark);
+}
+
+footer h5 {
+  color: white;
+  font-weight: 600;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+footer hr {
+  opacity: 0.2;
+}
+
+/* ===================================
+   Utilities
+   =================================== */
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.shadow-sm {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md) !important;
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* ===================================
+   Responsive Design
+   =================================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .hero-section {
+    padding: 3rem 0;
+    min-height: auto;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 1.75rem;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .step-number-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .card-icon,
+  .treatment-icon,
+  .why-icon,
+  .contact-method-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .info-card {
+    margin-bottom: 1rem;
+  }
+
+  .btn-lg {
+    padding: 0.75rem 2rem;
+  }
+}
+
+/* ===================================
+   Animations
+   =================================== */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card,
+.info-card,
+.treatment-card {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* ===================================
+   Print Styles
+   =================================== */
+
+@media print {
+  .navbar,
+  .btn,
+  footer {
+    display: none;
+  }
+
+  body {
+    font-size: 12pt;
+  }
+
+  .card {
+    break-inside: avoid;
+  }
+}
+
+/* ===================================
+   Accessibility
+   =================================== */
+
+.btn:focus,
+.nav-link:focus,
+.accordion-button:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary-color: #2c5f6f;
+    --text-dark: #000000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
