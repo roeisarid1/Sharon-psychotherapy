@@ -81,12 +81,12 @@
       </div>
     </section>
 
-    <!-- Contact Info -->
+    <!-- Contact Form Section -->
     <section class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <div class="text-center mb-5">
+          <div class="col-lg-6 mx-auto">
+            <div class="text-center mb-4">
               <p class="lead mb-4">
                 נדבר על מה שמטריד אותך, ונבין ביחד אם הטיפול מתאים.
               </p>
@@ -98,61 +98,71 @@
               </div>
             </div>
 
-            <!-- Contact Methods -->
-            <div class="row g-4 mb-5">
-              <!-- Phone -->
-              <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm text-center">
-                  <div class="card-body p-4">
-                    <div class="contact-method-icon mb-3">📱</div>
-                    <h4 class="h5 mb-3">טלפון</h4>
-                    <p class="mb-3">הדרך המהירה ביותר ליצירת קשר</p>
-                    <a href="tel:0502044475" class="btn btn-primary"
-                      >050-2044475</a
-                    >
-                    <p class="small text-muted mt-3 mb-0">
-                      ניתן להשאיר הודעה אם לא עונה
-                    </p>
+            <div class="card border-0 shadow-sm mb-4">
+              <div class="card-body p-4 p-md-5">
+                <h3 class="text-center mb-4">השאירו פרטים ונחזור אליכם</h3>
+                <p class="text-center text-muted mb-4">
+                  מלאו את הפרטים ונחזור אליכם בהקדם האפשרי
+                </p>
+                <form action="https://formspree.io/f/xwpyovkv" method="POST">
+                  <div class="mb-3">
+                    <label for="name" class="form-label">שם מלא</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="name"
+                      name="name"
+                      required
+                    />
                   </div>
-                </div>
+                  <div class="mb-3">
+                    <label for="email" class="form-label">אימייל</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone" class="form-label">טלפון</label>
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="phone"
+                      name="phone"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label for="message" class="form-label">הודעה</label>
+                    <textarea
+                      class="form-control"
+                      id="message"
+                      name="message"
+                      rows="4"
+                      placeholder="ספרו לנו קצת על מה שמטריד אתכם..."
+                    ></textarea>
+                  </div>
+                  <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                      שלח/י פרטים
+                    </button>
+                  </div>
+                </form>
               </div>
+            </div>
 
-              <!-- WhatsApp -->
-              <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm text-center">
-                  <div class="card-body p-4">
-                    <div class="contact-method-icon mb-3">💬</div>
-                    <h4 class="h5 mb-3">וואטסאפ</h4>
-                    <p class="mb-3">שליחת הודעה בזמן שנוח לך</p>
-                    <a
-                      href="https://wa.me/972502044475"
-                      target="_blank"
-                      class="btn btn-success"
-                      >שלח/י הודעה</a
-                    >
-                    <p class="small text-muted mt-3 mb-0">מענה בהקדם האפשרי</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Email -->
-              <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm text-center">
-                  <div class="card-body p-4">
-                    <div class="contact-method-icon mb-3">✉️</div>
-                    <h4 class="h5 mb-3">אימייל</h4>
-                    <p class="mb-3">לפניות מפורטות או שאלות</p>
-                    <a
-                      href="mailto:sharon2848@gmail.com"
-                      class="btn btn-outline-primary"
-                      >sharon2848@gmail.com</a
-                    >
-                    <p class="small text-muted mt-3 mb-0">
-                      מענה תוך 24-48 שעות
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <!-- WhatsApp Button -->
+            <div class="text-center">
+              <p class="text-muted mb-3">או שלחו הודעה ישירות בוואטסאפ</p>
+              <a
+                href="https://wa.me/972502044475"
+                target="_blank"
+                class="btn btn-outline-success"
+              >
+                <span style="font-size: 1.2rem">💬</span> שלח/י הודעה בוואטסאפ
+              </a>
             </div>
 
             <!-- Location & Hours -->
@@ -349,70 +359,6 @@
                     הפגישה.
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mx-auto">
-            <div class="card border-0 shadow-sm">
-              <div class="card-body p-4 p-md-5">
-                <h3 class="text-center mb-4">השאירו פרטים ונחזור אליכם</h3>
-                <p class="text-center text-muted mb-4">
-                  מלאו את הפרטים ונחזור אליכם בהקדם האפשרי
-                </p>
-                <form action="https://formspree.io/f/xwpyovkv" method="POST">
-                  <div class="mb-3">
-                    <label for="name" class="form-label">שם מלא</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="name"
-                      name="name"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="email" class="form-label">אימייל</label>
-                    <input
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      name="email"
-                      required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="phone" class="form-label">טלפון</label>
-                    <input
-                      type="tel"
-                      class="form-control"
-                      id="phone"
-                      name="phone"
-                    />
-                  </div>
-                  <div class="mb-4">
-                    <label for="message" class="form-label">הודעה</label>
-                    <textarea
-                      class="form-control"
-                      id="message"
-                      name="message"
-                      rows="4"
-                      placeholder="ספרו לנו קצת על מה שמטריד אתכם..."
-                    ></textarea>
-                  </div>
-                  <div class="d-grid">
-                    <button type="submit" class="btn btn-primary btn-lg">
-                      שלח/י פרטים
-                    </button>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
