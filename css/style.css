@@ -1,33 +1,22 @@
-/* ===================================
-   Global Styles & Variables
-   =================================== */
-
 :root {
-  /* Color Palette - Calm & Professional */
-  --primary-color: #4a90a4; /* Teal Blue */
-  --secondary-color: #7fb3d5; /* Light Blue */
-  --accent-color: #5d9b9b; /* Sage Green */
-  --text-dark: #2c3e50; /* Dark Blue-Gray */
-  --text-light: #6c757d; /* Medium Gray */
-  --bg-light: #f8f9fa; /* Very Light Gray */
+  --primary-color: #4a90a4;
+  --secondary-color: #7fb3d5;
+  --accent-color: #5d9b9b;
+  --text-dark: #2c3e50;
+  --text-light: #6c757d;
+  --bg-light: #f8f9fa;
   --bg-white: #ffffff;
   --border-color: #dee2e6;
   --success-color: #28a745;
   --info-color: #17a2b8;
-
-  /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 3rem;
   --spacing-xl: 4rem;
-
-  /* Border Radius */
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 1rem;
-
-  /* Shadows */
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --shadow-md: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
@@ -43,13 +32,37 @@ body {
   font-family: "Heebo", sans-serif;
   color: var(--text-dark);
   line-height: 1.7;
-  background-color: var(--bg-white);
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-attachment: fixed;
   direction: rtl;
+  position: relative;
 }
 
-/* ===================================
-   Typography
-   =================================== */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+      circle at 20% 50%,
+      rgba(74, 144, 164, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(127, 179, 213, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 20%,
+      rgba(93, 155, 155, 0.03) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
+  z-index: -1;
+}
 
 h1,
 h2,
@@ -92,10 +105,6 @@ p {
   font-weight: 300;
   color: var(--text-light);
 }
-
-/* ===================================
-   Navigation
-   =================================== */
 
 .navbar {
   padding: 1rem 0;
@@ -140,10 +149,6 @@ p {
   color: white !important;
 }
 
-/* ===================================
-   Buttons
-   =================================== */
-
 .btn {
   font-weight: 500;
   padding: 0.75rem 2rem;
@@ -185,16 +190,40 @@ p {
   border-color: var(--primary-color);
 }
 
-/* ===================================
-   Hero Section
-   =================================== */
-
 .hero-section {
-  background: linear-gradient(135deg, #e8f4f8 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
   padding: 4rem 0;
   min-height: 80vh;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 50px 50px;
+  animation: backgroundMove 20s linear infinite;
+  pointer-events: none;
+}
+
+.hero-section h1,
+.hero-section h2,
+.hero-section p {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .hero-title {
@@ -212,10 +241,6 @@ p {
 .min-vh-75 {
   min-height: 75vh;
 }
-
-/* ===================================
-   Info Cards (Hero Section)
-   =================================== */
 
 .info-card {
   background: white;
@@ -238,13 +263,34 @@ p {
   color: var(--text-dark);
 }
 
-/* ===================================
-   Page Headers
-   =================================== */
-
 .page-header {
-  background: linear-gradient(135deg, #e8f4f8 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-bottom: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 70%
+  );
+  animation: shimmer 3s infinite;
+}
+
+.page-header h1,
+.page-header p {
+  color: white;
+  position: relative;
+  z-index: 1;
 }
 
 .section-title {
@@ -266,10 +312,6 @@ p {
   background-color: var(--primary-color);
 }
 
-/* ===================================
-   Cards
-   =================================== */
-
 .card {
   border-radius: var(--radius-lg);
   transition: all 0.3s ease;
@@ -285,10 +327,6 @@ p {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-
-/* ===================================
-   Method Page Styles
-   =================================== */
 
 .benefit-icon {
   font-size: 2.5rem;
@@ -317,10 +355,6 @@ p {
   font-weight: 700;
 }
 
-/* ===================================
-   About Page Styles
-   =================================== */
-
 .content-box {
   border-left: 4px solid var(--primary-color);
 }
@@ -333,10 +367,6 @@ p {
 .approach-icon {
   font-size: 3rem;
 }
-
-/* ===================================
-   Treatment Areas Styles
-   =================================== */
 
 .treatment-card {
   transition: all 0.3s ease;
@@ -354,10 +384,6 @@ p {
   font-size: 3rem;
   color: var(--primary-color);
 }
-
-/* ===================================
-   Process Page Styles
-   =================================== */
 
 .process-step {
   position: relative;
@@ -396,10 +422,6 @@ p {
   box-shadow: var(--shadow-sm);
 }
 
-/* ===================================
-   Why Page Styles
-   =================================== */
-
 .why-icon {
   font-size: 3rem;
   color: var(--primary-color);
@@ -420,10 +442,6 @@ p {
   color: var(--primary-color);
 }
 
-/* ===================================
-   Contact Page Styles
-   =================================== */
-
 .contact-method-icon {
   font-size: 3rem;
 }
@@ -443,10 +461,6 @@ p {
   border-color: var(--primary-color);
 }
 
-/* ===================================
-   Footer
-   =================================== */
-
 footer {
   background-color: var(--text-dark);
 }
@@ -463,10 +477,6 @@ footer p {
 footer hr {
   opacity: 0.2;
 }
-
-/* ===================================
-   Utilities
-   =================================== */
 
 .bg-primary {
   background-color: var(--primary-color) !important;
@@ -488,12 +498,29 @@ footer hr {
   box-shadow: var(--shadow-lg) !important;
 }
 
-/* ===================================
-   Testimonials Section
-   =================================== */
-
 .testimonials-section {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e8f4f8 100%);
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  position: relative;
+}
+
+.testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 255, 255, 0.3) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(255, 255, 255, 0.2) 0%,
+      transparent 50%
+    );
+  pointer-events: none;
 }
 
 .testimonial-card {
@@ -570,10 +597,6 @@ footer hr {
   color: var(--text-light);
 }
 
-/* ===================================
-   Responsive Design
-   =================================== */
-
 @media (max-width: 768px) {
   h1 {
     font-size: 2rem;
@@ -635,10 +658,6 @@ footer hr {
   }
 }
 
-/* ===================================
-   Animations
-   =================================== */
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -650,15 +669,59 @@ footer hr {
   }
 }
 
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes backgroundMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .card,
 .info-card,
 .treatment-card {
   animation: fadeIn 0.6s ease-out;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
 }
 
-/* ===================================
-   Print Styles
-   =================================== */
+.card:hover,
+.info-card:hover,
+.treatment-card:hover {
+  animation: float 2s ease-in-out infinite;
+}
 
 @media print {
   .navbar,
@@ -676,10 +739,6 @@ footer hr {
   }
 }
 
-/* ===================================
-   Accessibility
-   =================================== */
-
 .btn:focus,
 .nav-link:focus,
 .accordion-button:focus {
@@ -687,7 +746,6 @@ footer hr {
   outline-offset: 2px;
 }
 
-/* High contrast mode support */
 @media (prefers-contrast: high) {
   :root {
     --primary-color: #2c5f6f;
@@ -695,7 +753,6 @@ footer hr {
   }
 }
 
-/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
